@@ -18,15 +18,15 @@ interface ApiService {
     @Headers("Authorization: token ${BuildConfig.KEY}")
     suspend fun getSearchUser(@Query("q") username : String) : ResponseUser
 
-    @GET("users/{username)")
+    @GET("users/{username}")
     @Headers("Authorization: token ${BuildConfig.KEY}")
     suspend fun getDetailUser(@Path("username")username: String) : DetailUserResponse
 
-    @GET("users/{username)/followers")
+    @GET("users/{username}/followers")
     @Headers("Authorization: token ${BuildConfig.KEY}")
     suspend fun getFollowers(@Path("username")username: String) : List<ItemsItem>
 
-    @GET("users/{username)/following")
+    @GET("users/{username}/following")
     @Headers("Authorization: token ${BuildConfig.KEY}")
     suspend fun getFollowing(@Path("username")username: String) : List<ItemsItem>
 }

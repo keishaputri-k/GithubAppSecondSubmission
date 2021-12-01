@@ -74,6 +74,9 @@ class DetailActivity : AppCompatActivity() {
                 ).into(ivDetail)
 
                 tvNameDetail.text = detail?.name ?: "NO AVAILABLE"
+                tvCompanyDetail.text = detail?.company ?: "NO AVAILABLE"
+                tvUsernameDetail.text = detail?.login ?: "NO AVAILABLE"
+                tvLocationDetail.text = detail?.location ?: "NO AVAILABLE"
             }
         })
     }
