@@ -77,6 +77,8 @@ class DetailActivity : AppCompatActivity() {
                 tvCompanyDetail.text = detail?.company ?: "NO AVAILABLE"
                 tvUsernameDetail.text = detail?.login ?: "NO AVAILABLE"
                 tvLocationDetail.text = detail?.location ?: "NO AVAILABLE"
+                tvFollowersDetail.text= (detail?.followers?: "NO AVAILABLE").toString()
+                tvFollowingDetail.text= (detail?.following?: "NO AVAILABLE").toString()
             }
         })
     }

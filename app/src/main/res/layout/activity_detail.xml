@@ -9,18 +9,19 @@
 
     <ImageView
         android:id="@+id/ivDetail"
-        android:layout_width="@dimen/_200dp"
-        android:layout_height="@dimen/_200dp"
+        android:layout_width="@dimen/_100dp"
+        android:layout_height="@dimen/_100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/txt_imageview" />
 
     <TextView
         android:id="@+id/tvUsernameDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="@dimen/_16dp"
         android:text="@string/txt_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.016"
@@ -31,7 +32,7 @@
         android:id="@+id/tvNameDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="@dimen/_16dp"
         android:text="@string/txt_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.016"
@@ -42,7 +43,7 @@
         android:id="@+id/tvCompanyDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/_16dp"
         android:text="@string/txt_company"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.016"
@@ -53,7 +54,7 @@
         android:id="@+id/tvLocationDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/_16dp"
         android:text="@string/txt_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.016"
@@ -84,6 +85,28 @@
         app:srcCompat="@drawable/page_error"
         android:contentDescription="@string/txt_imageview" />
 
+    <TextView
+        android:id="@+id/tvFollowingDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_following"
+        android:layout_marginTop="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocationDetail" />
+
+    <TextView
+        android:id="@+id/tvFollowersDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_followers"
+        android:layout_marginTop="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFollowingDetail" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tlDetail"
         android:layout_width="match_parent"
@@ -91,7 +114,7 @@
         android:layout_marginTop="@dimen/_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLocationDetail"
+        app:layout_constraintTop_toBottomOf="@id/tvFollowersDetail"
         app:tabGravity="fill"
         app:tabIndicatorHeight="@dimen/_5dp"
         app:tabMaxWidth="@dimen/_0dp"
@@ -105,5 +128,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tlDetail" />
+        app:layout_constraintTop_toBottomOf="@id/tlDetail">
+
+
+</androidx.viewpager2.widget.ViewPager2>
 </androidx.constraintlayout.widget.ConstraintLayout>

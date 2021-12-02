@@ -19,7 +19,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "KEY", '"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"')
+        buildConfigField("String", "KEY", '"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"')
     }
 
     buildTypes {
