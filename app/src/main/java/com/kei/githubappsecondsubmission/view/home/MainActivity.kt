@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                TODO("Not yet implemented")
+                mainViewModel.getSearchUser(newText)
+                return false
             }
         })
     }
