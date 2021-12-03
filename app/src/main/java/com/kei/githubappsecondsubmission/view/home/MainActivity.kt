@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
         setViewModelProvider()
+        loading()
         showRecycler()
         observeData()
         getSearchData()
@@ -76,7 +77,15 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
+    private fun loading() {
+        mainViewModel.loading.observe(this, {isLoading ->
+            if (isLoading){
+                mainBinding.pbMain.visibility = View.VISIBLE
+            }else{
+                mainBinding.pbMain.visibility = View.GONE
+            }
+        })
+    }
     private fun showRecycler() {
         mainBinding.rvMain.apply {
             setHasFixedSize(true)
