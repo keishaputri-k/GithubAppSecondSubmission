@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/clDetail"
+    style="@style/backgroundDark"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.detail.dashboard.DetailActivity">
@@ -11,55 +13,56 @@
         android:id="@+id/ivDetail"
         android:layout_width="@dimen/_100dp"
         android:layout_height="@dimen/_100dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/txt_imageview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/txt_imageview" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvUsernameDetail"
+        android:id="@+id/tvDetailUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginStart="35dp"
         android:text="@string/txt_username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNameDetail" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUsernameLebelDetail"
+        app:layout_constraintStart_toEndOf="@+id/tvUsernameLebelDetail"
+        app:layout_constraintTop_toTopOf="@+id/tvUsernameLebelDetail" />
 
     <TextView
         android:id="@+id/tvNameDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginStart="60dp"
         android:text="@string/txt_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivDetail" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNameLabelDetail"
+        app:layout_constraintStart_toEndOf="@+id/tvNameLabelDetail"
+        app:layout_constraintTop_toTopOf="@+id/tvNameLabelDetail" />
 
     <TextView
-        android:id="@+id/tvCompanyDetail"
+        android:id="@+id/tvDetailCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginStart="35dp"
         android:text="@string/txt_company"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUsernameDetail" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvComapnyLabelDetail"
+        app:layout_constraintStart_toEndOf="@+id/tvComapnyLabelDetail"
+        app:layout_constraintTop_toTopOf="@+id/tvComapnyLabelDetail" />
 
     <TextView
-        android:id="@+id/tvLocationDetail"
+        android:id="@+id/tvDetailLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginStart="40dp"
         android:text="@string/txt_location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCompanyDetail" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLocationLabelDetail"
+        app:layout_constraintStart_toEndOf="@+id/tvLocationLabelDetail"
+        app:layout_constraintTop_toTopOf="@+id/tvLocationLabelDetail" />
 
     <ProgressBar
         android:id="@+id/pbDetail"
@@ -76,60 +79,156 @@
         android:id="@+id/ivErrorDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/txt_imageview"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.497"
-        app:srcCompat="@drawable/page_error"
-        android:contentDescription="@string/txt_imageview" />
+        app:srcCompat="@drawable/page_error" />
 
     <TextView
-        android:id="@+id/tvFollowingDetail"
+        android:id="@+id/tvDetailFollowing"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16dp"
         android:text="@string/txt_following"
-        android:layout_marginTop="@dimen/_16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLocationDetail" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tvFollowingLabelDetail"
+        app:layout_constraintEnd_toEndOf="@+id/tvFollowingLabelDetail"
+        app:layout_constraintStart_toStartOf="@+id/tvFollowingLabelDetail" />
 
     <TextView
-        android:id="@+id/tvFollowersDetail"
+        android:id="@+id/tvDetailFollowers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_followers"
-        android:layout_marginTop="@dimen/_16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFollowingDetail" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetailFollowing"
+        app:layout_constraintEnd_toEndOf="@+id/tvFollowersLabelDetail"
+        app:layout_constraintStart_toStartOf="@+id/tvFollowersLabelDetail"
+        app:layout_constraintTop_toTopOf="@+id/tvDetailFollowing" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tlDetail"
+        style="@style/backgroundDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_24dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFollowersDetail"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocationLabelDetail"
         app:tabGravity="fill"
         app:tabIndicatorHeight="@dimen/_5dp"
         app:tabMaxWidth="@dimen/_0dp"
-        app:tabMode="fixed" />
+        app:tabMode="fixed"
+        app:tabTextColor="@color/white" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpDetail"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_0dp"
-        android:layout_marginTop="@dimen/_20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tlDetail">
 
 
-</androidx.viewpager2.widget.ViewPager2>
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <TextView
+        android:id="@+id/tvNameLabelDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/txt_name"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetail" />
+
+    <TextView
+        android:id="@+id/tvUsernameLebelDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_username"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameLabelDetail" />
+
+    <TextView
+        android:id="@+id/tvComapnyLabelDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_company"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsernameLebelDetail" />
+
+    <TextView
+        android:id="@+id/tvLocationLabelDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_location"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvComapnyLabelDetail" />
+
+    <TextView
+        android:id="@+id/tvFollowingLabelDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/txt_following"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
+        app:layout_constraintStart_toEndOf="@+id/ivDetail" />
+
+    <TextView
+        android:id="@+id/tvFollowersLabelDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/txt_followers"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFollowingLabelDetail"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/tvFollowingLabelDetail"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailFollowers"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvDetailRepository"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_repository"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetailFollowers"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/tvDetailFollowers"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/txt_repository"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFollowersLabelDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailRepository"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,8 @@ package com.kei.githubappsecondsubmission.domain.data.network
 
 import com.kei.githubappsecondsubmission.BuildConfig
 import com.kei.githubappsecondsubmission.domain.data.model.DetailUserResponse
-import com.kei.githubappsecondsubmission.domain.data.model.ItemsItem
 import com.kei.githubappsecondsubmission.domain.data.model.ResponseUser
+import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
@@ -24,9 +24,9 @@ interface ApiService {
 
     @GET("users/{username}/followers")
     @Headers("Authorization: token ${BuildConfig.KEY}")
-    suspend fun getFollowers(@Path("username")username: String) : List<ItemsItem>
+    suspend fun getFollowers(@Path("username")username: String) : List<UsersItem>
 
     @GET("users/{username}/following")
     @Headers("Authorization: token ${BuildConfig.KEY}")
-    suspend fun getFollowing(@Path("username")username: String) : List<ItemsItem>
+    suspend fun getFollowing(@Path("username")username: String) : List<UsersItem>
 }

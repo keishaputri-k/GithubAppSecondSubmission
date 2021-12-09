@@ -2,8 +2,7 @@ package com.kei.githubappsecondsubmission.domain.repository
 
 import android.util.Log
 import com.kei.githubappsecondsubmission.domain.data.model.DetailUserResponse
-import com.kei.githubappsecondsubmission.domain.data.model.ItemsItem
-import com.kei.githubappsecondsubmission.domain.data.model.ResponseUser
+import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
 import com.kei.githubappsecondsubmission.domain.data.network.ApiResult
 import com.kei.githubappsecondsubmission.domain.data.network.ApiService
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +14,7 @@ import javax.inject.Singleton
 
 @Singleton
 class UserRepository @Inject constructor(private val apiService: ApiService){
-    suspend fun getAllUser(): Flow<ApiResult<List<ItemsItem?>?>>{
+    suspend fun getAllUser(): Flow<ApiResult<List<UsersItem?>?>>{
         return flow {
             try {
                 val data = apiService.getListUser().items
@@ -26,7 +25,7 @@ class UserRepository @Inject constructor(private val apiService: ApiService){
         }.flowOn(Dispatchers.IO)
     }
 
-    suspend fun getSearchUser(username : String) : Flow<ApiResult<List<ItemsItem?>?>>{
+    suspend fun getSearchUser(username : String) : Flow<ApiResult<List<UsersItem?>?>>{
         return flow {
             try {
                 val data = apiService.getSearchUser(username)
@@ -49,7 +48,7 @@ class UserRepository @Inject constructor(private val apiService: ApiService){
         }.flowOn(Dispatchers.IO)
     }
 
-    suspend fun getFollower(username: String): Flow<ApiResult<List<ItemsItem?>?>>{
+    suspend fun getFollower(username: String): Flow<ApiResult<List<UsersItem?>?>>{
         return flow {
             try {
                 val data = apiService.getFollowers(username)
@@ -60,7 +59,7 @@ class UserRepository @Inject constructor(private val apiService: ApiService){
         }
     }
 
-    suspend fun getFollowing(username: String): Flow<ApiResult<List<ItemsItem?>?>>{
+    suspend fun getFollowing(username: String): Flow<ApiResult<List<UsersItem?>?>>{
         return flow {
             try {
                 val data = apiService.getFollowing(username)

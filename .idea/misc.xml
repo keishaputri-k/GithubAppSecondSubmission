@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/drawable/color_cursor.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_follower.xml" value="0.11820652173913043" />
         <entry key="app/src/main/res/layout/fragment_following.xml" value="0.11820652173913043" />

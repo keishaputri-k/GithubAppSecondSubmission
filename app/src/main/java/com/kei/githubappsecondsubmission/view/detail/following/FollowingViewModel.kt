@@ -3,7 +3,7 @@ package com.kei.githubappsecondsubmission.view.detail.following
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kei.githubappsecondsubmission.domain.data.model.ItemsItem
+import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
 import com.kei.githubappsecondsubmission.domain.data.network.ApiResult
 import com.kei.githubappsecondsubmission.domain.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +18,7 @@ class FollowingViewModel @Inject constructor(private val userRepository: UserRep
     ViewModel() {
 
     private var strUsername: String = ""
-    private val _followingLiveData = MutableLiveData<List<ItemsItem?>?>()
+    private val _followingLiveData = MutableLiveData<List<UsersItem?>?>()
     val followingLiveData get() = _followingLiveData
 
     private val _loading: MutableLiveData<Boolean> = MutableLiveData()

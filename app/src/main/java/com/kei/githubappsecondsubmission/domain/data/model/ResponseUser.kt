@@ -14,19 +14,6 @@ data class ResponseUser(
 	val incompleteResults: Boolean,
 
 	@field:SerializedName("items")
-	val items: List<ItemsItem>
+	val items: List<UsersItem>
 ) : Parcelable
 
-
-@Parcelize
-data class ItemsItem(
-
-	@field:SerializedName("login")
-	val login: String,
-
-	@field:SerializedName("type")
-	val type: String,
-
-	@field:SerializedName("avatar_url")
-	val avatarUrl: String,
-) : Parcelable

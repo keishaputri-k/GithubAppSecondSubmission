@@ -19,8 +19,8 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideHTTPLoggingInterceptor(): HttpLoggingInterceptor {
-        val interceptor = HttpLoggingInterceptor()
-        return interceptor
+        val interceptorHTTP = HttpLoggingInterceptor()
+        return interceptorHTTP
     }
 
     @Provides

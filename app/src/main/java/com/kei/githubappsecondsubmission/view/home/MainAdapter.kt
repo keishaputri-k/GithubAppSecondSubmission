@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kei.githubappsecondsubmission.databinding.UserItemBinding
-import com.kei.githubappsecondsubmission.domain.data.model.ItemsItem
+import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
 
-class MainAdapter(private val listUser : List<ItemsItem?>?) :RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter(private val listUser : List<UsersItem?>?) :RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     private var onClickCallback : OnItemClickCallback? = null
 
@@ -30,7 +30,6 @@ class MainAdapter(private val listUser : List<ItemsItem?>?) :RecyclerView.Adapte
         val users = listUser?.get(position)
         holder.itemUserBinding.apply {
             tvNameItem.text = users?.login
-            tvTypeItem.text = users?.type
             Glide.with(holder.itemView.context).load(users?.avatarUrl).into(ciUserItem)
             holder.itemView.setOnClickListener{onClickCallback?.onItemClicked(users)}
         }
@@ -41,6 +40,6 @@ class MainAdapter(private val listUser : List<ItemsItem?>?) :RecyclerView.Adapte
 }
 
 interface OnItemClickCallback {
-    fun onItemClicked(user: ItemsItem?)
+    fun onItemClicked(user: UsersItem?)
 
 }

@@ -11,4 +11,5 @@
     <string name="txt_username">Username</string>
     <string name="txt_company">Company</string>
     <string name="txt_location">Location</string>
+    <string name="txt_repository">Repository</string>
 </resources>
