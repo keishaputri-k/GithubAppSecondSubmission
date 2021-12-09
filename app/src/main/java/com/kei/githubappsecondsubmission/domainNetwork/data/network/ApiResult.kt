@@ -1,4 +1,4 @@
-package com.kei.githubappsecondsubmission.domain.data.network
+package com.kei.githubappsecondsubmission.domainNetwork.data.network
 // R -> result keseluruhan | Berhasil
 //T -> data | gagal
 open class ApiResult<out R> {

@@ -1,11 +1,11 @@
-package com.kei.githubappsecondsubmission.view.home
+package com.kei.githubappsecondsubmission.ui.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
-import com.kei.githubappsecondsubmission.domain.data.network.ApiResult
-import com.kei.githubappsecondsubmission.domain.repository.UserRepository
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
+import com.kei.githubappsecondsubmission.domainNetwork.data.network.ApiResult
+import com.kei.githubappsecondsubmission.domainNetwork.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onCompletion

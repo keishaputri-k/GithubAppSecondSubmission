@@ -1,11 +1,11 @@
-package com.kei.githubappsecondsubmission.view.home
+package com.kei.githubappsecondsubmission.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kei.githubappsecondsubmission.databinding.UserItemBinding
-import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
 
 class MainAdapter(private val listUser : List<UsersItem?>?) :RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 

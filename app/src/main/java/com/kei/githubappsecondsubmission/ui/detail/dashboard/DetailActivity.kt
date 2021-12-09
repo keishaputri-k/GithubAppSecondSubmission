@@ -1,4 +1,4 @@
-package com.kei.githubappsecondsubmission.view.detail.dashboard
+package com.kei.githubappsecondsubmission.ui.detail.dashboard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,9 +10,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.kei.githubappsecondsubmission.R
-import com.kei.githubappsecondsubmission.adater.ViewPagerAdapter
+import com.kei.githubappsecondsubmission.pagerAdater.ViewPagerAdapter
 import com.kei.githubappsecondsubmission.databinding.ActivityDetailBinding
-import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

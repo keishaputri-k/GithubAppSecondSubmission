@@ -1,11 +1,11 @@
-package com.kei.githubappsecondsubmission.view.detail.following
+package com.kei.githubappsecondsubmission.ui.detail.follower
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
-import com.kei.githubappsecondsubmission.domain.data.network.ApiResult
-import com.kei.githubappsecondsubmission.domain.repository.UserRepository
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
+import com.kei.githubappsecondsubmission.domainNetwork.data.network.ApiResult
+import com.kei.githubappsecondsubmission.domainNetwork.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onCompletion
@@ -14,12 +14,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FollowingViewModel @Inject constructor(private val userRepository: UserRepository) :
+class FollowerViewModel @Inject constructor(private val userRepository: UserRepository) :
     ViewModel() {
 
-    private var strUsername: String = ""
-    private val _followingLiveData = MutableLiveData<List<UsersItem?>?>()
-    val followingLiveData get() = _followingLiveData
+    private var strUserName: String = ""
+
+    private val _followersLiveData = MutableLiveData<List<UsersItem?>?>()
+    val followerLiveData get() = _followersLiveData
 
     private val _loading: MutableLiveData<Boolean> = MutableLiveData()
     val loading get() = _loading
@@ -27,11 +28,11 @@ class FollowingViewModel @Inject constructor(private val userRepository: UserRep
     private val _error: MutableLiveData<Throwable?> = MutableLiveData()
     val error get() = _error
 
-    fun getFollowing(username: String) {
-        if (strUsername != username) {
+    fun getFollowers(username: String) {
+        if (strUserName != username) {
             viewModelScope.launch {
-                strUsername = username
-                userRepository.getFollowing(username).onStart {
+                strUserName = username
+                userRepository.getFollower(username).onStart {
                     _loading.value = true
                 }.onCompletion {
                     _loading.value = false
@@ -39,7 +40,7 @@ class FollowingViewModel @Inject constructor(private val userRepository: UserRep
                     when (it) {
                         is ApiResult.Success -> {
                             _error.postValue(null)
-                            _followingLiveData.postValue(it.data)
+                            _followersLiveData.postValue(it.data)
                         }
                         is ApiResult.Error -> {
                             _error.postValue(it.throwable)
@@ -49,5 +50,4 @@ class FollowingViewModel @Inject constructor(private val userRepository: UserRep
             }
         }
     }
-
 }

@@ -1,9 +1,9 @@
-package com.kei.githubappsecondsubmission.domain.data.network
+package com.kei.githubappsecondsubmission.domainNetwork.data.network
 
 import com.kei.githubappsecondsubmission.BuildConfig
-import com.kei.githubappsecondsubmission.domain.data.model.DetailUserResponse
-import com.kei.githubappsecondsubmission.domain.data.model.ResponseUser
-import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.DetailUserResponse
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.ResponseUser
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path

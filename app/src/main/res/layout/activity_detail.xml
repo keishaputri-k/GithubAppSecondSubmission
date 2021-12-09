@@ -7,7 +7,7 @@
     style="@style/backgroundDark"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.detail.dashboard.DetailActivity">
+    tools:context=".ui.detail.dashboard.DetailActivity">
 
     <ImageView
         android:id="@+id/ivDetail"

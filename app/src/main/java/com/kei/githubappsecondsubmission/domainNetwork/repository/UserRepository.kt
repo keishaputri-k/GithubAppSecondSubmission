@@ -1,10 +1,10 @@
-package com.kei.githubappsecondsubmission.domain.repository
+package com.kei.githubappsecondsubmission.domainNetwork.repository
 
 import android.util.Log
-import com.kei.githubappsecondsubmission.domain.data.model.DetailUserResponse
-import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
-import com.kei.githubappsecondsubmission.domain.data.network.ApiResult
-import com.kei.githubappsecondsubmission.domain.data.network.ApiService
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.DetailUserResponse
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
+import com.kei.githubappsecondsubmission.domainNetwork.data.network.ApiResult
+import com.kei.githubappsecondsubmission.domainNetwork.data.network.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

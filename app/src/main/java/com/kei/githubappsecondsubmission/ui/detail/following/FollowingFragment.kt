@@ -1,4 +1,4 @@
-package com.kei.githubappsecondsubmission.view.detail.following
+package com.kei.githubappsecondsubmission.ui.detail.following
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.kei.githubappsecondsubmission.R
 import com.kei.githubappsecondsubmission.databinding.FragmentFollowingBinding
-import com.kei.githubappsecondsubmission.view.detail.follower.FollowerFragment
-import com.kei.githubappsecondsubmission.view.home.MainAdapter
+import com.kei.githubappsecondsubmission.ui.home.MainAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,13 +33,13 @@ class FollowingFragment : Fragment() {
         followingViewModel.error.observe(viewLifecycleOwner, {
             if (it == null){
                 followingBinding.apply {
-                    ivErrorFollowing.visibility = View.GONE
-                    rvFollowing.visibility = View.VISIBLE
+                    ivErrorFollowingPage.visibility = View.GONE
+                    rvFollowingPage.visibility = View.VISIBLE
                 }
             }else{
                 followingBinding.apply {
-                    ivErrorFollowing.visibility = View.VISIBLE
-                    rvFollowing.visibility = View.GONE
+                    ivErrorFollowingPage.visibility = View.VISIBLE
+                    rvFollowingPage.visibility = View.GONE
                 }
             }
         })
@@ -51,13 +49,13 @@ class FollowingFragment : Fragment() {
         followingViewModel.loading.observe(viewLifecycleOwner, { isLoading ->
             if (isLoading) {
                 followingBinding.apply {
-                    pbFollowing.visibility = View.VISIBLE
-                    rvFollowing.visibility = View.GONE
+                    pbFollowingPage.visibility = View.VISIBLE
+                    rvFollowingPage.visibility = View.GONE
                 }
             } else {
                 followingBinding.apply {
-                    pbFollowing.visibility = View.GONE
-                    rvFollowing.visibility = View.VISIBLE
+                    pbFollowingPage.visibility = View.GONE
+                    rvFollowingPage.visibility = View.VISIBLE
                 }
             }
         })
@@ -69,16 +67,16 @@ class FollowingFragment : Fragment() {
         followingViewModel.followingLiveData.observe(viewLifecycleOwner, { listFollowing ->
             if ((listFollowing?.size ?: 0) == 0) {
                 followingBinding.apply {
-                    ivErrorFollowing.visibility = View.VISIBLE
-                    rvFollowing.visibility = View.GONE
+                    ivErrorFollowingPage.visibility = View.VISIBLE
+                    rvFollowingPage.visibility = View.GONE
                 }
             } else {
                 followingBinding.apply {
-                    pbFollowing.visibility = View.GONE
-                    rvFollowing.visibility = View.VISIBLE
+                    pbFollowingPage.visibility = View.GONE
+                    rvFollowingPage.visibility = View.VISIBLE
 
                     val mainAdapter = MainAdapter(listFollowing)
-                    rvFollowing.adapter = mainAdapter
+                    rvFollowingPage.adapter = mainAdapter
                 }
             }
         })
@@ -89,7 +87,7 @@ class FollowingFragment : Fragment() {
     }
 
     private fun setRecyclerView() {
-        followingBinding.rvFollowing.apply {
+        followingBinding.rvFollowingPage.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
             adapter = MainAdapter(listOf())

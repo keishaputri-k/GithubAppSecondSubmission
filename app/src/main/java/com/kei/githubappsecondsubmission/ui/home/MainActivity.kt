@@ -1,4 +1,4 @@
-package com.kei.githubappsecondsubmission.view.home
+package com.kei.githubappsecondsubmission.ui.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,8 +10,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kei.githubappsecondsubmission.databinding.ActivityMainBinding
-import com.kei.githubappsecondsubmission.domain.data.model.UsersItem
-import com.kei.githubappsecondsubmission.view.detail.dashboard.DetailActivity
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
+import com.kei.githubappsecondsubmission.ui.detail.dashboard.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 //guna AndroidEntryPoint karena kita pakai injector

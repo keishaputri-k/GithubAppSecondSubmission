@@ -1,4 +1,4 @@
-package com.kei.githubappsecondsubmission.domain.data.model
+package com.kei.githubappsecondsubmission.domainNetwork.data.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

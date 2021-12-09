@@ -7,10 +7,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/_20dp"
-    tools:context=".view.detail.follower.FollowerFragment">
+    tools:context=".ui.detail.follower.FollowerFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFollower"
+        android:id="@+id/rvFollowerPage"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:layout_marginTop="@dimen/_20dp"
@@ -22,7 +22,7 @@
         tools:listitem="@layout/user_item" />
 
     <ProgressBar
-        android:id="@+id/pbFollower"
+        android:id="@+id/pbFollowerPage"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/ivErrorFollower"
+        android:id="@+id/ivErrorFollowerPage"
         android:layout_width="@dimen/_100dp"
         android:layout_height="@dimen/_100dp"
         android:contentDescription="@string/error_image"

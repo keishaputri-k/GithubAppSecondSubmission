@@ -9,7 +9,7 @@
     android:padding="@dimen/_16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ciUserItem"
+        android:id="@+id/ciItemUser"
         android:layout_width="@dimen/_50dp"
         android:layout_height="@dimen/_50dp"
         android:layout_marginStart="@dimen/_30dp"
@@ -18,7 +18,7 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvNameItem"
+        android:id="@+id/tvItemName"
         style="@style/textLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +27,6 @@
         android:textColor="@color/white"
         android:textSize="@dimen/_16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/ciUserItem"
-        app:layout_constraintTop_toTopOf="@id/ciUserItem" />
+        app:layout_constraintStart_toEndOf="@id/ciItemUser"
+        app:layout_constraintTop_toTopOf="@id/ciItemUser" />
 </androidx.constraintlayout.widget.ConstraintLayout>

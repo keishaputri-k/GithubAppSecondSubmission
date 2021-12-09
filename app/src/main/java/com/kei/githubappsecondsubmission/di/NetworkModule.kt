@@ -1,6 +1,6 @@
 package com.kei.githubappsecondsubmission.di
 
-import com.kei.githubappsecondsubmission.domain.data.network.ApiService
+import com.kei.githubappsecondsubmission.domainNetwork.data.network.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

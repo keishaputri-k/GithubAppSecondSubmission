@@ -1,11 +1,11 @@
-package com.kei.githubappsecondsubmission.view.detail.dashboard
+package com.kei.githubappsecondsubmission.ui.detail.following
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kei.githubappsecondsubmission.domain.data.model.DetailUserResponse
-import com.kei.githubappsecondsubmission.domain.data.network.ApiResult
-import com.kei.githubappsecondsubmission.domain.repository.UserRepository
+import com.kei.githubappsecondsubmission.domainNetwork.data.model.UsersItem
+import com.kei.githubappsecondsubmission.domainNetwork.data.network.ApiResult
+import com.kei.githubappsecondsubmission.domainNetwork.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onCompletion
@@ -14,10 +14,12 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DetailViewModel @Inject constructor(private val userRepository: UserRepository) :
+class FollowingViewModel @Inject constructor(private val userRepository: UserRepository) :
     ViewModel() {
-    private val _detailUser: MutableLiveData<DetailUserResponse?> = MutableLiveData()
-    val detailUser get() = _detailUser
+
+    private var strUsername: String = ""
+    private val _followingLiveData = MutableLiveData<List<UsersItem?>?>()
+    val followingLiveData get() = _followingLiveData
 
     private val _loading: MutableLiveData<Boolean> = MutableLiveData()
     val loading get() = _loading
@@ -25,13 +27,11 @@ class DetailViewModel @Inject constructor(private val userRepository: UserReposi
     private val _error: MutableLiveData<Throwable?> = MutableLiveData()
     val error get() = _error
 
-    private var strUsername: String = " "
-
-    fun getDetailUser(username: String) {
+    fun getFollowing(username: String) {
         if (strUsername != username) {
             viewModelScope.launch {
                 strUsername = username
-                userRepository.getDetailUser(username).onStart {
+                userRepository.getFollowing(username).onStart {
                     _loading.value = true
                 }.onCompletion {
                     _loading.value = false
@@ -39,7 +39,7 @@ class DetailViewModel @Inject constructor(private val userRepository: UserReposi
                     when (it) {
                         is ApiResult.Success -> {
                             _error.postValue(null)
-                            _detailUser.postValue(it.data)
+                            _followingLiveData.postValue(it.data)
                         }
                         is ApiResult.Error -> {
                             _error.postValue(it.throwable)
@@ -49,4 +49,5 @@ class DetailViewModel @Inject constructor(private val userRepository: UserReposi
             }
         }
     }
+
 }
