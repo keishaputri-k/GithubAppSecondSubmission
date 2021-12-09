@@ -29,8 +29,8 @@ class MainAdapter(private val listUser : List<UsersItem?>?) :RecyclerView.Adapte
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val users = listUser?.get(position)
         holder.itemUserBinding.apply {
-            tvNameItem.text = users?.login
-            Glide.with(holder.itemView.context).load(users?.avatarUrl).into(ciUserItem)
+            tvItemName.text = users?.login
+            Glide.with(holder.itemView.context).load(users?.avatarUrl).into(ciItemUser)
             holder.itemView.setOnClickListener{onClickCallback?.onItemClicked(users)}
         }
 
